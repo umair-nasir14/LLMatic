@@ -5,4 +5,4 @@ _Large Language Models (LLMs) have emerged as powerful tools capable of accompli
 
 ### To run experiments:
 
-```python search_qd.py```
+```python llmatic.py```
