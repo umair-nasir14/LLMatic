@@ -11,7 +11,7 @@ cfg = Config()
 
 def codex_mutate(cfg: Config, prompt, model="code-davinci-002",temperature=0.5):
     
-    os.environ['OPENAI_API_KEY'] = "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"# ENETR OPENAI API KEY HERE
+    os.environ['OPENAI_API_KEY'] = ""# ENETR OPENAI API KEY HERE
     openai.api_key = os.getenv("OPENAI_API_KEY")
     return openai.Completion.create(
                                     model=model,
@@ -59,7 +59,6 @@ def codegen_mutate(cfg: Config, prompt, temperature):
         # to the desired location if necessary.
 
         inputs = tokenizer(prompt, return_tensors="pt").to(cfg.DEVICE)
-        print(inputs)
         sample = model.generate(**inputs, max_length=350 + len(inputs[0]),temperature=temperature,num_beams=1,do_sample=True)
         return tokenizer.decode(sample[0][len(inputs[0]):], truncate_before_pattern=[r"\n\n^#", "^'''", "\n\n\n"])
 

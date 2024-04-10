@@ -121,7 +121,7 @@ def extract_code_section(code_string: str, prompt, file_path):
             # Add the line to the current code section
             current_section.append(line)
 
-    with open(file_path, "w") as f:
+    with open(os.path.normpath(file_path), "w") as f:
         f.write(f"import torch\nimport torch.nn as nn\nimport torch.nn.functional as F\n{code_string}")
 
 

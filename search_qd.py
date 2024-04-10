@@ -301,7 +301,7 @@ def main(cfg: Config):
             generation, prompt, temperature = k
 
             
-            net_path = os.path.normpath(f"{path_nets}/network_{gen_i}_{i}_{prompt}_{temperature}.py")
+            net_path = os.path.normpath(f"{path_nets}/network_{gen_i}_{i}_{prompt[3:-3]}_{temperature}.py")
             
 
             if cfg.MUTATION == "codex":
@@ -510,8 +510,8 @@ def main(cfg: Config):
         
         if gen_i % 1 == 0:
             
-            cm.__save_archive(nets_archive, path_nets, gen_i,name="net")
-            cm.__save_archive(prompt_archive, path_nets, gen_i,name="prompt")
+            cm.__save_archive(nets_archive, gen_i,name="net")
+            cm.__save_archive(prompt_archive, gen_i,name="prompt")
         # write log
         if log_file != None:
             fit_list = np.array([x.fitness for x in nets_archive.values()])
@@ -519,8 +519,8 @@ def main(cfg: Config):
                     fit_list.min(), np.mean(fit_list), np.median(fit_list),
                     np.percentile(fit_list, 5), np.percentile(fit_list, 95)))
             log_file.flush()
-    cm.__save_archive(nets_archive, path_nets, gen_i,name="net")
-    cm.__save_archive(prompt_archive, path_nets, gen_i,name="prompt")
+    cm.__save_archive(nets_archive, gen_i,name="net")
+    cm.__save_archive(prompt_archive, gen_i,name="prompt")
     return nets_archive,prompt_archive
 
 if __name__ == "__main__":
