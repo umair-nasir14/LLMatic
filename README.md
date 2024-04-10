@@ -1,1 +1,1 @@
-# LLMatic
+# NAS-LLM
