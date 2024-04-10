@@ -71,8 +71,10 @@ def main(cfg: Config):
        Format of the logfile: evals archive_size max mean median 5%_percentile, 95%_percentile
 
     """
-    #ray.init(num_gpus=cfg.NUM_GPUS_TOTAL) 
-    ray.init()
+    if cfg.DEVICE == "cuda":
+        ray.init(num_gpus=cfg.NUM_GPUS_TOTAL) 
+    else:
+        ray.init()
     mutation_fn = codex_mutate if cfg.MUTATION == "codex" else codegen_mutate
 
     prompts = ['"""Add a layer to improve the above network"""',

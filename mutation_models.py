@@ -22,8 +22,8 @@ def codex_mutate(cfg: Config, prompt, model="code-davinci-002",temperature=0.5):
 
 
 #['codegen-350M-multi', 'codegen-2B-multi', 'codegen-6B-multi', 'codegen-16B-multi', 'codegen-350M-mono', 'codegen-2B-mono', 'codegen-6B-mono', 'codegen-16B-mono']
-@ray.remote(num_cpus=cfg.NUM_CPUS)  # FIXME: Number of parallel processes should be configured globally.
-#@ray.remote(num_gpus=cfg.NUM_GPUS)
+#@ray.remote(num_cpus=cfg.NUM_CPUS)  # FIXME: Number of parallel processes should be configured globally.
+@ray.remote(num_gpus=cfg.NUM_GPUS)
 def codegen_mutate(cfg: Config, prompt, temperature):
     diff = False
 
