@@ -5,4 +5,20 @@ _Large Language Models (LLMs) have emerged as powerful tools capable of accompli
 
 ### To run experiments:
 
+Clone this repository:
+
+```https://github.com/umair-nasir14/LLMatic.git```
+
+Install all dependencies:
+
+```
+cd LLMatic
+conda env create -f environment.yaml
+conda activate llmatic
+```
+
+Run:
+
 ```python llmatic.py```
+
+All configs are present in `conf/config.py`.
