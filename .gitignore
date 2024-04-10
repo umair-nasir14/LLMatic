@@ -1,0 +1,9 @@
+# Ignore python compile stuff
+*.pyc
+*.dat
+
+data
+outputs
+multirun
+logs
+rough
