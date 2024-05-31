@@ -22,3 +22,14 @@ Run:
 ```python llmatic.py```
 
 All configs are present in `conf/config.py`.
+
+### Cite:
+
+```
+@article{nasir2023llmatic,
+  title={Llmatic: Neural architecture search via large language models and quality-diversity optimization},
+  author={Nasir, Muhammad U and Earle, Sam and Togelius, Julian and James, Steven and Cleghorn, Christopher},
+  journal={arXiv preprint arXiv:2306.01102},
+  year={2023}
+}
+```
