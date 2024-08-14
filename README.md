@@ -7,7 +7,7 @@ _Large Language Models (LLMs) have emerged as powerful tools capable of accompli
 
 Clone this repository:
 
-```https://github.com/umair-nasir14/LLMatic.git```
+```git clone https://github.com/umair-nasir14/LLMatic.git```
 
 Install all dependencies:
 
